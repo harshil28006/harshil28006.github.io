@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshil Chauhan — Robotics &amp; Data Systems</title>
+  <meta name="description" content="Harshil Chauhan — Mechanical Engineering undergraduate at NIT Durgapur. Hands-on research in robotics, AUV simulation, and cloud data engineering. Research Intern at IIT Mandi.">
+  <meta name="author" content="Harshil Chauhan">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Harshil Chauhan — Robotics &amp; Data Systems">
+  <meta property="og:description" content="B.Tech Mechanical Engineering at NIT Durgapur. Research in AUV simulation, UAV flight control, and cloud data engineering (Snowflake, DBT).">
+  <meta property="og:url" content="https://harshil28006.github.io/uav-portfolio-2">
+
+  <!-- Fonts: Inter & JetBrains Mono for authentic raaulc-inspired typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Prevent theme flash
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.dataset.theme = saved;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Top Navigation (raaulc style: ~/harshil) -->
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="container nav-inner">
+      <a href="#hero" class="navbar-path" aria-label="Harshil Chauhan Home">
+        <span class="p-tilde">~/</span><span class="p-name">harshil</span>
+      </a>
+
+      <ul class="navbar-nav">
+        <li><a href="#robotics" class="nav-link">uav &amp; auv</a></li>
+        <li><a href="#data-engineering" class="nav-link">data-eng</a></li>
+        <li><a href="#research" class="nav-link">research</a></li>
+        <li><a href="#about" class="nav-link">about</a></li>
+        <li>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme (T)">
+            ◐
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" id="main">
+
+    <!-- Profile (Hero & About Section) -->
+    <section class="hero" id="hero">
+      <div class="cmd-line">
+        <span class="cmd-dollar">$</span>
+        <span class="cmd-name">whois</span>
+        <span class="cmd-arg">harshil-chauhan</span>
+      </div>
+
+      <div class="hero-identity">
+        <h1 class="hero-name">Harshil Chauhan</h1>
+        <p class="hero-sub">
+          <span>B.Tech Mechanical Engineering Undergrad</span>
+          <span>·</span>
+          <span class="highlight">NIT Durgapur</span>
+          <span>·</span>
+          <span>India</span>
+        </p>
+      </div>
+
+      <p class="hero-bio">
+        I am a Mechanical Engineering undergraduate at the <strong>National Institute of Technology, Durgapur</strong> (CGPA: 8.22/10). My work centers on hands-on research in robotics, <strong>autonomous underwater vehicle (AUV) simulation</strong>, control systems, and <strong>cloud data engineering</strong>. Notably, I completed a <strong>Research Internship in Marine Robotics &amp; Autonomous Systems at IIT Mandi</strong> (CAIR), developing ROS 2 and Gazebo simulation frameworks with cascaded PID control.
+      </p>
+
+      <!-- Terminal-style Core Stack -->
+      <div class="terminal-stack-box">
+        <div class="term-header">
+          <span class="cmd-dollar">$</span>
+          <span>cat core_stack.txt</span>
+        </div>
+        <div class="term-stack-list">
+          <span class="term-pill">ROS 2</span>
+          <span class="term-sep">·</span>
+          <span class="term-pill">Gazebo Harmonic</span>
+          <span class="term-sep">·</span>
+          <span class="term-pill">ArduPilot</span>
+          <span class="term-sep">·</span>
+          <span class="term-pill">MATLAB/Simulink</span>
+          <span class="term-sep">·</span>
+          <span class="term-pill">Python</span>
+          <span class="term-sep">·</span>
+          <span class="term-pill">AWS</span>
+          <span class="term-sep">·</span>
+          <span class="term-pill">Snowflake</span>
+          <span class="term-sep">·</span>
+          <span class="term-pill">DBT</span>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn primary" href="#robotics">uav &amp; auv projects →</a>
+        <a class="btn" href="#data-engineering">data engineering</a>
+        <a class="btn" href="#research">iit mandi research</a>
+        <a class="btn" href="https://github.com/harshil28006" target="_blank" rel="noopener">github ↗</a>
+        <a class="btn" href="https://linkedin.com/in/harshil-nitdurgapur" target="_blank" rel="noopener">linkedin ↗</a>
+      </div>
+    </section>
+
+    <!-- UAV and AUV Projects Section -->
+    <section class="section" id="robotics">
+      <div class="section-head">
+        <span class="section-label">01 / Robotics &amp; Autonomy</span>
+        <h2 class="section-title">UAV &amp; AUV Projects</h2>
+      </div>
+
+      <div class="project-group">
+        <!-- Project 1: AUV Navigation -->
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Autonomous Underwater Vehicle Navigation System</h3>
+            <span class="project-tagline">Marine Robotics Simulation &amp; Perception</span>
+          </div>
+
+          <div class="tech-tag-row">
+            <span class="tech-tag">ROS 2</span>
+            <span class="tech-tag">Gazebo Harmonic</span>
+            <span class="tech-tag">ArduPilot</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">Python</span>
+          </div>
+
+          <ul class="achievements-list">
+            <li>
+              Built an <strong>AUV simulation framework using ROS 2, Gazebo Harmonic, and ArduPilot</strong> to evaluate autonomous navigation and vehicle dynamics in virtual aquatic environments.
+            </li>
+            <li>
+              Integrated <strong>OpenCV path detection and guidance commands</strong> for autonomous waypoint following and underwater feature tracking.
+            </li>
+            <li>
+              Designed and validated <strong>cascaded PID depth and trajectory control</strong> under varying simulated hydrodynamic conditions and turbulence.
+            </li>
+            <li>
+              Implemented <strong>ROS 2 nodes for sensor data processing</strong>, vehicle thruster control, and inter-node communication across camera, DVL, and sonar sensor topics.
+            </li>
+          </ul>
+        </article>
+
+        <!-- Project 2: AI-Based UAV Threat Detection -->
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">AI-Based UAV Threat Detection System</h3>
+            <span class="project-tagline">Tata Technologies InnoVent Hackathon</span>
+          </div>
+
+          <div class="tech-tag-row">
+            <span class="tech-tag">MATLAB</span>
+            <span class="tech-tag">Simulink</span>
+          </div>
+
+          <ul class="achievements-list">
+            <li>
+              Developed a <strong>MATLAB/Simulink flight model</strong> with waypoint navigation, trajectory tracking, and real-time control algorithms.
+            </li>
+            <li>
+              Implemented <strong>cascaded PID flight control</strong> for stable attitude and position regulation during mission execution in simulation.
+            </li>
+            <li>
+              Designed the complete architecture for <strong>future ROS 2, Gazebo, and edge AI integration</strong> for real-time aerial threat detection and tactical response.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Data Engineering Projects Section -->
+    <section class="section" id="data-engineering">
+      <div class="section-head">
+        <span class="section-label">02 / Cloud &amp; Distributed Data</span>
+        <h2 class="section-title">Data Engineering Projects</h2>
+      </div>
+
+      <div class="project-group">
+        <!-- Project 1: NexusData Warehouse -->
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">NexusData Warehouse</h3>
+            <span class="project-tagline">Cloud Data Platform &amp; Analytics Engineering</span>
+          </div>
+
+          <div class="tech-tag-row">
+            <span class="tech-tag">AWS S3</span>
+            <span class="tech-tag">Snowflake</span>
+            <span class="tech-tag">DBT</span>
+            <span class="tech-tag">Jinja</span>
+          </div>
+
+          <ul class="achievements-list">
+            <li>
+              Architected an <strong>end-to-end data pipeline implementing medallion architecture (Bronze, Silver, Gold layers)</strong> for processing large-scale transactional and operational data.
+            </li>
+            <li>
+              Configured <strong>secure data ingestion from AWS S3 data lakes to Snowflake</strong> utilizing external stages, customized file formats, and robust IAM security protocols.
+            </li>
+            <li>
+              Utilized <strong>DBT Core (CLI) and Jinja templates/macros</strong> to build dynamic, parameter-driven transformation pipelines and implement incremental data loading strategies.
+            </li>
+            <li>
+              Designed downstream analytical data models including <strong>One Big Table (OBT) and Star Schema architectures with Slowly Changing Dimensions (SCD Type 2)</strong>.
+            </li>
+            <li>
+              Code &amp; Models available at <a href="https://github.com/harshil28006" target="_blank" rel="noopener" style="color:var(--text-code);text-decoration:underline;">github.com/harshil28006 ↗</a>.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Research Experience (IIT Mandi) -->
+    <section class="section" id="research">
+      <div class="section-head">
+        <span class="section-label">03 / Experience</span>
+        <h2 class="section-title">Research Experience</h2>
+      </div>
+
+      <div class="experience-block">
+        <div class="exp-head">
+          <h3 class="exp-role">Research Intern — Marine Robotics &amp; Autonomous Systems</h3>
+          <span class="exp-date">May 2026 – July 2026</span>
+        </div>
+        <div class="exp-org">
+          CAIR, Indian Institute of Technology (IIT) Mandi
+          <span class="advisor">· Advisor: Prof. Jagadeesh Kadiyam</span>
+        </div>
+
+        <ul class="achievements-list">
+          <li>Researched AUV simulation using ROS 2, Gazebo Harmonic, and ArduSub for underwater structural inspection and autonomous navigation.</li>
+          <li>Integrated perception, localization, and control modules with simulated camera, Doppler Velocity Log (DVL), and sonar sensors.</li>
+          <li>Developed and tested custom ROS 2 nodes for sensor communication, real-time image processing, and autonomous vehicle control.</li>
+          <li>Designed cascaded PID control for depth and trajectory tracking; exploring adaptive and learning-based parameter tuning.</li>
+          <li>Collaborated with research mentors to validate simulation results and improve navigation algorithm robustness in aquatic test scenarios.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education & Leadership Section -->
+    <section class="section" id="about">
+      <div class="section-head">
+        <span class="section-label">04 / Background</span>
+        <h2 class="section-title">Education &amp; Leadership</h2>
+      </div>
+
+      <div class="two-col-grid">
+        <div class="compact-card">
+          <h4>National Institute of Technology, Durgapur</h4>
+          <p class="compact-sub">B.Tech in Mechanical Engineering · 2024 – 2028</p>
+          <p class="compact-desc">
+            <strong>CGPA: 8.22 / 10</strong><br>
+            Class XII (CBSE): 90.08% · Class X (CBSE): 94.80%<br>
+            Focus on robotics kinematics, control theory, CAD/SolidWorks, and computational data pipelines.
+          </p>
+        </div>
+
+        <div class="compact-card">
+          <h4>Training &amp; Placement Coordinator</h4>
+          <p class="compact-sub">Dept. of Mechanical Engineering · Mar 2026 – Present</p>
+          <p class="compact-desc">
+            Primary liaison between the T&amp;P Cell, faculty, and recruiters. Coordinated recruitment drives, eligibility, and schedules for <strong>180+ students</strong>.
+          </p>
+          <p class="compact-desc" style="margin-top:0.4rem;">
+            <strong>Senior Coordinator — SPIC MACAY</strong> (Aug 2025 – Present): Organized flagship cultural programs with 200+ participants.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Clean Footer (raaulc style) -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span>Harshil Chauhan</span> · <span>NIT Durgapur</span>
+      </div>
+
+      <div class="footer-nav">
+        <a href="https://github.com/harshil28006" target="_blank" rel="noopener">github.com/harshil28006</a>
+        <a href="https://linkedin.com/in/harshil-nitdurgapur" target="_blank" rel="noopener">linkedin.com/in/harshil-nitdurgapur</a>
+        <a href="https://harshil28006.github.io/uav-portfolio-2" target="_blank" rel="noopener">harshil28006.github.io/uav-portfolio-2</a>
+        <a href="mailto:harshil0807@gmail.com">harshil0807@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
