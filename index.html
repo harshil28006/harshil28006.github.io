@@ -104,6 +104,7 @@
 
       <div class="cta-row">
         <a class="btn primary" href="#robotics">uav &amp; auv projects →</a>
+        <a class="btn" href="#uav-threat-detection">uav demo ▶</a>
         <a class="btn" href="#data-engineering">data engineering</a>
         <a class="btn" href="#research">iit mandi research</a>
         <a class="btn" href="https://github.com/harshil28006" target="_blank" rel="noopener">github ↗</a>
@@ -151,7 +152,7 @@
         </article>
 
         <!-- Project 2: AI-Based UAV Threat Detection -->
-        <article class="project-item">
+        <article class="project-item" id="uav-threat-detection">
           <div class="project-header">
             <h3 class="project-title">AI-Based UAV Threat Detection System</h3>
             <span class="project-tagline">Tata Technologies InnoVent Hackathon</span>
@@ -160,6 +161,11 @@
           <div class="tech-tag-row">
             <span class="tech-tag">MATLAB</span>
             <span class="tech-tag">Simulink</span>
+            <span class="tech-tag">Flight Control</span>
+            <span class="tech-tag">Threat Detection</span>
+            <a href="https://youtu.be/ThPveLmHdXg" target="_blank" rel="noopener" class="tech-tag video-tag">
+              ▶ Video Demo ↗
+            </a>
           </div>
 
           <ul class="achievements-list">
@@ -172,7 +178,49 @@
             <li>
               Designed the complete architecture for <strong>future ROS 2, Gazebo, and edge AI integration</strong> for real-time aerial threat detection and tactical response.
             </li>
+            <li>
+              Simulated aerial threat interception and trajectory tracking scenarios, validated via real-time telemetry recording (video demonstration below).
+            </li>
           </ul>
+
+          <!-- Embedded Video Showcase -->
+          <div class="video-showcase">
+            <div class="video-showcase-header">
+              <div class="video-window-controls" aria-hidden="true">
+                <span class="control-dot dot-red"></span>
+                <span class="control-dot dot-yellow"></span>
+                <span class="control-dot dot-green"></span>
+              </div>
+              <div class="video-showcase-title">
+                <span class="cmd-dollar">$</span>
+                <span>telemetry_feed --source="uav_threat_detection_demo.mp4"</span>
+              </div>
+              <a href="https://youtu.be/ThPveLmHdXg" target="_blank" rel="noopener" class="video-direct-link" title="Open directly on YouTube">
+                YouTube ↗
+              </a>
+            </div>
+
+            <div class="video-player-container">
+              <iframe
+                id="uav-threat-detection-video"
+                src="https://www.youtube-nocookie.com/embed/ThPveLmHdXg"
+                title="AI-Based UAV Threat Detection System Demonstration Video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="video-showcase-footer">
+              <span class="video-status-indicator">
+                <span class="status-pulsing-dot"></span> SIMULATION RECORDING
+              </span>
+              <span class="video-caption-text">
+                MATLAB/Simulink UAV trajectory planning, waypoint navigation &amp; threat interception simulation
+              </span>
+            </div>
+          </div>
         </article>
       </div>
     </section>

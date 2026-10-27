@@ -455,6 +455,181 @@ code, kbd, pre, samp {
 }
 
 /* --------------------------------------------------------------------------
+   Video Showcase Component (Terminal & Media Player Bezel)
+   -------------------------------------------------------------------------- */
+.video-showcase {
+  margin-top: 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.video-showcase:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.video-showcase-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+}
+
+.video-window-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.control-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.control-dot.dot-red {
+  background-color: #ef4444;
+  opacity: 0.85;
+}
+
+.control-dot.dot-yellow {
+  background-color: #f59e0b;
+  opacity: 0.85;
+}
+
+.control-dot.dot-green {
+  background-color: #10b981;
+  opacity: 0.85;
+}
+
+.video-showcase-title {
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.video-showcase-title span:last-child {
+  color: var(--text-secondary);
+}
+
+.video-direct-link {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-code);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition);
+}
+
+.video-direct-link:hover {
+  color: var(--accent-cyan);
+  border-color: var(--border-hover);
+  background: var(--bg-hover);
+}
+
+.video-player-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-player-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-showcase-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  flex-wrap: wrap;
+}
+
+.video-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--accent-amber);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 0.7rem;
+}
+
+.status-pulsing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-amber);
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(251, 191, 36, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+  }
+}
+
+.video-caption-text {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.tech-tag.video-tag {
+  color: var(--accent-cyan);
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.08);
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.tech-tag.video-tag:hover {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: var(--accent-cyan);
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
    Experience Section (IIT Mandi Research Internship)
    -------------------------------------------------------------------------- */
 .experience-block {
@@ -583,5 +758,13 @@ code, kbd, pre, samp {
   .section {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+  }
+  .video-showcase-title {
+    font-size: 0.68rem;
+  }
+  .video-showcase-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 }
