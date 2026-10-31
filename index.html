@@ -234,7 +234,7 @@
 
       <div class="project-group">
         <!-- Project 1: NexusData Warehouse -->
-        <article class="project-item">
+        <article class="project-item" id="nexusdata-warehouse">
           <div class="project-header">
             <h3 class="project-title">NexusData Warehouse</h3>
             <span class="project-tagline">Cloud Data Platform &amp; Analytics Engineering</span>
@@ -245,6 +245,9 @@
             <span class="tech-tag">Snowflake</span>
             <span class="tech-tag">DBT</span>
             <span class="tech-tag">Jinja</span>
+            <a href="#nexusdata-architecture" class="tech-tag diagram-tag">
+              📊 Architecture Diagram ↓
+            </a>
           </div>
 
           <ul class="achievements-list">
@@ -264,6 +267,47 @@
               Code &amp; Models available at <a href="https://github.com/harshil28006" target="_blank" rel="noopener" style="color:var(--text-code);text-decoration:underline;">github.com/harshil28006 ↗</a>.
             </li>
           </ul>
+
+          <!-- Embedded Architecture Diagram Showcase -->
+          <div class="diagram-showcase" id="nexusdata-architecture">
+            <div class="diagram-showcase-header">
+              <div class="diagram-window-controls" aria-hidden="true">
+                <span class="control-dot dot-red"></span>
+                <span class="control-dot dot-yellow"></span>
+                <span class="control-dot dot-green"></span>
+              </div>
+              <div class="diagram-showcase-title">
+                <span class="cmd-dollar">$</span>
+                <span>view_pipeline --spec="nexusdata_warehouse_architecture.png"</span>
+              </div>
+              <a href="assets/nexusdata-architecture.png" target="_blank" rel="noopener" class="diagram-direct-link" title="Open high-resolution architecture diagram">
+                High-Res ↗
+              </a>
+            </div>
+
+            <div class="diagram-image-container" tabindex="0" role="button" aria-label="Click to enlarge NexusData Warehouse architecture diagram">
+              <img
+                src="assets/nexusdata-architecture.png"
+                alt="NexusData Warehouse Architecture: End-to-End Modern Data Warehouse Architecture built with Snowflake, dbt, SQL, and Jinja"
+                class="diagram-image"
+                loading="lazy"
+                id="nexusdata-diagram-img"
+              />
+              <div class="diagram-expand-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                <span>Click to expand</span>
+              </div>
+            </div>
+
+            <div class="diagram-showcase-footer">
+              <span class="diagram-status-indicator">
+                <span class="status-pulsing-dot pulse-cyan"></span> END-TO-END PIPELINE ARCHITECTURE
+              </span>
+              <span class="diagram-caption-text">
+                Airbnb Data Pipeline · AWS S3 Ingestion → Snowflake Loading → dbt Medallion (Bronze/Silver/Gold OBT) → Star Schema Analytics
+              </span>
+            </div>
+          </div>
         </article>
       </div>
     </section>
@@ -343,6 +387,36 @@
       </div>
     </div>
   </footer>
+
+  <!-- Lightbox Modal for Architecture Diagram -->
+  <div class="diagram-modal" id="diagram-modal" role="dialog" aria-modal="true" aria-label="Architecture Diagram Preview" hidden>
+    <div class="diagram-modal-dialog">
+      <div class="diagram-modal-header">
+        <div class="diagram-modal-title">
+          <div class="diagram-window-controls" aria-hidden="true">
+            <span class="control-dot dot-red"></span>
+            <span class="control-dot dot-yellow"></span>
+            <span class="control-dot dot-green"></span>
+          </div>
+          <span>nexusdata_warehouse_architecture.png</span>
+        </div>
+        <button type="button" class="diagram-modal-close" id="diagram-modal-close" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="diagram-modal-body">
+        <img
+          src="assets/nexusdata-architecture.png"
+          alt="NexusData Warehouse Architecture: End-to-End Modern Data Warehouse Architecture built with Snowflake, dbt, SQL, and Jinja"
+          id="diagram-modal-img"
+        />
+      </div>
+
+      <div class="diagram-modal-footer">
+        <span>Click outside or press <kbd>ESC</kbd> to close</span>
+        <a href="assets/nexusdata-architecture.png" target="_blank" rel="noopener" class="diagram-direct-link">Open Original File ↗</a>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

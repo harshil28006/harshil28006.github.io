@@ -81,6 +81,64 @@
 
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // --------------------------------------------------------------------------
+  // Architecture Diagram Lightbox Modal
+  // --------------------------------------------------------------------------
+  const diagramModal = document.getElementById('diagram-modal');
+  const diagramTrigger = document.querySelector('.diagram-image-container');
+  const diagramCloseBtn = document.getElementById('diagram-modal-close');
+  let lastActiveElement = null;
+
+  function openDiagramModal() {
+    if (!diagramModal) return;
+    lastActiveElement = document.activeElement;
+    diagramModal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+    if (diagramCloseBtn) {
+      diagramCloseBtn.focus();
+    }
+  }
+
+  function closeDiagramModal() {
+    if (!diagramModal || diagramModal.hasAttribute('hidden')) return;
+    diagramModal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+    }
+  }
+
+  if (diagramTrigger) {
+    diagramTrigger.addEventListener('click', openDiagramModal);
+    diagramTrigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openDiagramModal();
+      }
+    });
+  }
+
+  if (diagramCloseBtn) {
+    diagramCloseBtn.addEventListener('click', closeDiagramModal);
+  }
+
+  if (diagramModal) {
+    diagramModal.addEventListener('click', (e) => {
+      // Close when clicking backdrop
+      if (e.target === diagramModal) {
+        closeDiagramModal();
+      }
+    });
+  }
+
+  // Keyboard navigation for modal (Escape to close)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && diagramModal && !diagramModal.hasAttribute('hidden')) {
+      closeDiagramModal();
+    }
+  });
+
   // Initialize on DOM ready
   initTheme();
 })();
+

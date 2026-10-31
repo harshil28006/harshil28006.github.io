@@ -28,7 +28,7 @@ Built for **Harshil Chauhan**, B.Tech Mechanical Engineering undergraduate at th
    - **Autonomous Underwater Vehicle Navigation System**: ROS 2, Gazebo Harmonic, ArduPilot, OpenCV, Python. Cascaded PID depth and trajectory control with simulated camera, DVL, and sonar.
    - **AI-Based UAV Threat Detection System**: MATLAB/Simulink flight model with waypoint navigation and cascaded PID flight control for the Tata Technologies InnoVent Hackathon.
 3. **Data Engineering Projects Section**:
-   - **NexusData Warehouse**: End-to-end data pipeline implementing medallion architecture (Bronze, Silver, Gold). AWS S3 data lake ingestion to Snowflake with DBT Core CLI, Jinja macros, OBT, and Star Schema modeling.
+   - **NexusData Warehouse**: End-to-end data pipeline implementing medallion architecture (Bronze, Silver, Gold). AWS S3 data lake ingestion to Snowflake with DBT Core CLI, Jinja macros, OBT, and Star Schema modeling. Includes embedded architecture diagram showcase with interactive high-resolution lightbox view.
 4. **Research Experience**:
    - Research Internship in Marine Robotics & Autonomous Systems at **IIT Mandi** (CAIR, Advisor: Prof. Jagadeesh Kadiyam).
 5. **Education & Leadership**:
