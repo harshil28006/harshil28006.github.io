@@ -1,45 +1,134 @@
-%PDF-1.4
-1 0 obj
-<< /Title (Harshil Patel - Curriculum Vitae)
-   /Author (Harshil Patel)
-   /Creator (Antigravity IDE) >>
-endobj
-2 0 obj
-<< /Type /Catalog /Pages 3 0 R >>
-endobj
-3 0 obj
-<< /Type /Pages /Kids [4 0 R] /Count 1 >>
-endobj
-4 0 obj
-<< /Type /Page /Parent 3 0 R /MediaBox [0 0 612 792] /Contents 5 0 R /Resources << /Font << /F1 6 0 R >> >> >>
-endobj
-5 0 obj
-<< /Length 174 >>
-stream
-BT
-/F1 22 Tf
-50 720 Td
-(Harshil Patel - Data Systems & Autonomous Robotics Engineer) Tj
-/F1 12 Tf
-0 -30 Td
-(Drop your complete official PDF CV in d:/Harshil_website/assets/Harshil_Patel_CV.pdf) Tj
-ET
-endstream
-endobj
-6 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
-endobj
-xref
-0 7
-0000000000 65535 f 
-0000000010 00000 n 
-0000000122 00000 n 
-0000000171 00000 n 
-0000000228 00000 n 
-0000000346 00000 n 
-0000000572 00000 n 
-trailer
-<< /Size 7 /Root 2 0 R >>
-startxref
-647
-%%EOF
+\documentclass[10pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}          % Times: clean, ATS-safe text extraction
+\usepackage[scaled=0.92]{helvet} % Sans-serif for the header (optional)
+\usepackage[margin=0.6in,top=0.45in,bottom=0.4in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{microtype}         % letter-spaced subtitle (\textls)
+
+% Makes text copy/paste and ATS parsing clean
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedbottom
+\raggedright
+
+% ---------- Section style ----------
+\titleformat{\section}{\normalsize\bfseries\scshape}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{7pt}{3pt}
+
+% ---------- Bullet style ----------
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.5pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
+
+% ---------- Helper macros ----------
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\subentry}[2]{\textit{#1}\hfill #2\par}
+
+% ---------- Header colours & macros ----------
+\definecolor{linkblue}{RGB}{26,86,219}
+\definecolor{sepcolor}{RGB}{190,140,80}
+\definecolor{greytext}{RGB}{70,70,70}
+
+% blue underlined link
+\newcommand{\hlink}[2]{\href{#1}{\textcolor{linkblue}{\underline{#2}}}}
+
+% orange/tan vertical bar separator
+\newcommand{\hsep}{\hspace{0.7em}\textcolor{sepcolor}{\textbar}\hspace{0.7em}}
+
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+  {\sffamily\bfseries\fontsize{24}{28}\selectfont Harshil Chauhan}\\[4pt]
+  {\sffamily\small
+  \textcolor{greytext}{Rajkot, Gujarat, India}\hsep
+  \hlink{mailto:harshil0807@gmail.com}{harshil0807@gmail.com}\\[2pt]
+  \hlink{https://github.com/harshil28006}{GitHub}\hsep
+  \hlink{https://www.linkedin.com/in/harshil-nitdurgapur/}{LinkedIn}\hsep
+  \hlink{https://harshil28006.github.io/index.html}{Portfolio}}
+\end{center}
+
+% ---------- Summary ----------
+\section{Professional Summary}
+Mechanical Engineering undergraduate with hands-on research experience in robotics, autonomous underwater vehicle (AUV) simulation, and control systems. Skilled in ROS 2, Gazebo, ArduSub, ArduPilot, MATLAB/Simulink, Python, and SQL, with project experience spanning computer vision and cloud data engineering (AWS, Snowflake, DBT). Proven leadership as Training \& Placement Coordinator for 180+ students.
+
+% ---------- Education ----------
+\section{Education}
+\entry{National Institute of Technology, Durgapur}{Aug 2024 -- May 2028 (Expected)}
+\subentry{Bachelor of Technology (B.Tech) in Mechanical Engineering}{CGPA: 8.22/10}
+\textbf{Class XII} (CBSE, 2024): 90.08\% \ $\cdot$ \ \textbf{Class X} (CBSE, 2022): 94.80\%
+
+% ---------- Technical Skills ----------
+\section{Technical Skills}
+\textbf{Programming Languages:} Python, C++, C, MATLAB, SQL\par
+\textbf{Robotics \& Simulation:} ROS 2, Gazebo Harmonic, ArduSub, ArduPilot, Simulink, SolidWorks, Blender\par
+\textbf{Control Systems \& Perception:} Cascaded PID Control, Trajectory Tracking, Depth Control, Computer Vision, OpenCV\par
+\textbf{Tools \& Platforms:} Git, GitHub, Linux, AWS S3, Snowflake, DBT Core/CLI, Visual Studio Code, Cursor\par
+\textbf{Core Concepts:} Data Structures and Algorithms, Object-Oriented Programming, System Design, Data Modeling (OBT, Star Schema)\par
+\textbf{Soft Skills:} Leadership, Problem Solving, Team Collaboration, Communication, Project Management
+
+% ---------- Experience ----------
+\section{Experience}
+\entry{Research Intern -- Marine Robotics \& Autonomous Systems}{May 2026 -- July 2026}
+\subentry{CAIR, Indian Institute of Technology (IIT) Mandi}{Advisor: Prof. Jagadeesh Kadiyam}
+\begin{itemize}
+  \item Researched AUV simulation using \textbf{ROS 2, Gazebo Harmonic, and ArduSub} for underwater inspection and navigation.
+  \item Integrated perception, localization, and control modules with simulated \textbf{camera, DVL, and sonar} sensors.
+  \item Developed and tested ROS 2 nodes for sensor communication, image processing, and autonomous vehicle control.
+  \item Designed \textbf{cascaded PID control} for depth and trajectory tracking; exploring adaptive and learning-based tuning.
+  \item Collaborated with research mentors to validate simulation results and improve navigation algorithm robustness.
+\end{itemize}
+
+% ---------- Projects ----------
+\section{Projects}
+\entry{Autonomous Underwater Vehicle Navigation System}{ROS 2, Gazebo Harmonic, ArduPilot, OpenCV, Python}
+\begin{itemize}
+  \item Built an AUV simulation framework using \textbf{ROS 2, Gazebo Harmonic, and ArduPilot} to evaluate autonomous navigation.
+  \item Integrated \textbf{OpenCV} path detection and guidance commands for autonomous waypoint following.
+  \item Designed and validated cascaded PID depth and trajectory control under varying simulated conditions.
+  \item Implemented ROS 2 nodes for sensor data processing, vehicle control, and inter-node communication.
+\end{itemize}
+
+\vspace{2pt}
+\entry{NexusData Warehouse}{AWS S3, Snowflake, DBT, Jinja}
+\begin{itemize}
+  \item Architected an end-to-end data engineering pipeline implementing medallion architecture (Bronze, Silver, Gold layers) for processing large-scale transactional and operational data.
+  \item Configured secure data ingestion from \textbf{AWS S3} data lakes to \textbf{Snowflake} utilizing external stages, file formats, and IAM security protocols.
+  \item Utilized \textbf{DBT Core (CLI)} and \textbf{Jinja templates/macros} to build dynamic, parameter-driven transformation pipelines and implement incremental data loading strategies.
+  \item Designed downstream analytical data models including One Big Table (OBT) and Star Schema architectures with Slowly Changing Dimensions (SCD Type 2).
+  \item GitHub: \href{https://github.com/harshil28006}{github.com/harshil28006}
+\end{itemize}
+
+\vspace{2pt}
+\entry{AI-Based UAV Threat Detection System (Tata Technologies InnoVent Hackathon)}{MATLAB, Simulink}
+\begin{itemize}
+  \item Developed a MATLAB/Simulink flight model with waypoint navigation, trajectory tracking, and real-time control.
+  \item Implemented \textbf{cascaded PID} flight control for stable attitude and position regulation in simulation.
+  \item Designed the architecture for future ROS 2, Gazebo, and edge AI integration for aerial threat detection.
+\end{itemize}
+
+% ---------- Leadership ----------
+\section{Leadership Experience}
+\entry{Training \& Placement Coordinator -- Department of Mechanical Engineering, NIT Durgapur}{Mar 2026 -- Present}
+\begin{itemize}
+  \item Primary liaison between the Training \& Placement Cell, faculty, students, and recruiters.
+  \item Coordinate drives, eligibility, and interview schedules for \textbf{180+ students}; assist recruiters with logistics.
+\end{itemize}
+
+\vspace{2pt}
+\entry{Senior Coordinator -- SPIC MACAY, NIT Durgapur}{Aug 2025 -- Present}
+\begin{itemize}
+  \item Organized cultural heritage events, including the flagship \textbf{Virasat} program with \textbf{200+} student participants.
+  \item Managed logistics, volunteers, and stage; supported institute events including \textbf{Aarohan} and \textbf{Recstacy}.
+\end{itemize}
+
+\end{document}
