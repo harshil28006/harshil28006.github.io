@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAV &amp; AUV Projects — Harshil Chauhan</title>
+  <meta name="description" content="UAV and AUV robotics projects by Harshil Chauhan — AUV Navigation with ROS 2 &amp; Gazebo, AI-Based UAV Threat Detection with MATLAB/Simulink.">
+  <meta name="author" content="Harshil Chauhan">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script>
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.dataset.theme = saved;
+    } catch(e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="container nav-inner">
+      <a href="../index.html" class="navbar-path" aria-label="Harshil Chauhan Home">
+        <span class="p-tilde">~/</span><span class="p-name">harshil</span>
+      </a>
+      <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <ul class="navbar-nav" id="navbar-nav" role="list">
+        <li><a href="../index.html" class="nav-link">home</a></li>
+        <li><a href="../about.html" class="nav-link">about</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">projects ▾</button>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none"><a href="uav-auv.html" role="menuitem"><span class="dm-tilde">~/</span><span class="dm-path">projects/uav-auv</span></a></li>
+            <li role="none"><a href="data-engineering.html" role="menuitem"><span class="dm-tilde">~/</span><span class="dm-path">projects/data-engineering</span></a></li>
+            <li role="none"><a href="software.html" role="menuitem"><span class="dm-tilde">~/</span><span class="dm-path">projects/software</span></a></li>
+            <li role="none"><a href="other.html" role="menuitem"><span class="dm-tilde">~/</span><span class="dm-path">projects/other</span></a></li>
+          </ul>
+        </li>
+        <li><a href="../experience.html" class="nav-link">experience</a></li>
+        <li><a href="../skills.html" class="nav-link">skills</a></li>
+        <li><a href="../contact.html" class="nav-link">contact</a></li>
+        <li>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme (T)">◐</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" id="main">
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="page-hero-cmd">
+        <span class="cmd-dollar">$</span>
+        <span>ls ~/projects/uav-auv</span>
+      </div>
+      <h1 class="page-hero-title">UAV &amp; AUV Projects</h1>
+      <p class="page-hero-sub">Robotics · Autonomy · Marine &amp; Aerial Systems</p>
+    </div>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="uav-auv.html">projects</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>uav-auv</span>
+    </nav>
+
+    <!-- UAV & AUV Projects -->
+    <section class="section" id="robotics">
+      <div class="section-head">
+        <span class="section-label">01 / Robotics &amp; Autonomy</span>
+        <h2 class="section-title">UAV &amp; AUV Projects</h2>
+      </div>
+
+      <div class="project-group">
+
+        <!-- Project 1: AUV Navigation -->
+        <article class="project-item" id="auv-navigation">
+          <div class="project-header">
+            <h3 class="project-title">Autonomous Underwater Vehicle Navigation System</h3>
+            <span class="project-tagline">Marine Robotics Simulation &amp; Perception</span>
+          </div>
+
+          <div class="tech-tag-row">
+            <span class="tech-tag">ROS 2</span>
+            <span class="tech-tag">Gazebo Harmonic</span>
+            <span class="tech-tag">ArduPilot</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">Python</span>
+          </div>
+
+          <ul class="achievements-list">
+            <li>
+              Built an <strong>AUV simulation framework using ROS 2, Gazebo Harmonic, and ArduPilot</strong> to evaluate autonomous navigation and vehicle dynamics in virtual aquatic environments.
+            </li>
+            <li>
+              Integrated <strong>OpenCV path detection and guidance commands</strong> for autonomous waypoint following and underwater feature tracking.
+            </li>
+            <li>
+              Designed and validated <strong>cascaded PID depth and trajectory control</strong> under varying simulated hydrodynamic conditions and turbulence.
+            </li>
+            <li>
+              Implemented <strong>ROS 2 nodes for sensor data processing</strong>, vehicle thruster control, and inter-node communication across camera, DVL, and sonar sensor topics.
+            </li>
+          </ul>
+        </article>
+
+        <!-- Project 2: AI-Based UAV Threat Detection -->
+        <article class="project-item" id="uav-threat-detection">
+          <div class="project-header">
+            <h3 class="project-title">AI-Based UAV Threat Detection System</h3>
+            <span class="project-tagline">Tata Technologies InnoVent Hackathon</span>
+          </div>
+
+          <div class="tech-tag-row">
+            <span class="tech-tag">MATLAB</span>
+            <span class="tech-tag">Simulink</span>
+            <span class="tech-tag">Flight Control</span>
+            <span class="tech-tag">Threat Detection</span>
+            <a href="https://youtu.be/ThPveLmHdXg" target="_blank" rel="noopener" class="tech-tag video-tag">
+              ▶ Video Demo ↗
+            </a>
+          </div>
+
+          <ul class="achievements-list">
+            <li>
+              Developed a <strong>MATLAB/Simulink flight model</strong> with waypoint navigation, trajectory tracking, and real-time control algorithms.
+            </li>
+            <li>
+              Implemented <strong>cascaded PID flight control</strong> for stable attitude and position regulation during mission execution in simulation.
+            </li>
+            <li>
+              Designed the complete architecture for <strong>future ROS 2, Gazebo, and edge AI integration</strong> for real-time aerial threat detection and tactical response.
+            </li>
+            <li>
+              Simulated aerial threat interception and trajectory tracking scenarios, validated via real-time telemetry recording (video demonstration below).
+            </li>
+          </ul>
+
+          <!-- Embedded Video Showcase -->
+          <div class="video-showcase">
+            <div class="video-showcase-header">
+              <div class="video-window-controls" aria-hidden="true">
+                <span class="control-dot dot-red"></span>
+                <span class="control-dot dot-yellow"></span>
+                <span class="control-dot dot-green"></span>
+              </div>
+              <div class="video-showcase-title">
+                <span class="cmd-dollar">$</span>
+                <span>telemetry_feed --source="uav_threat_detection_demo.mp4"</span>
+              </div>
+              <a href="https://youtu.be/ThPveLmHdXg" target="_blank" rel="noopener" class="video-direct-link" title="Open directly on YouTube">
+                YouTube ↗
+              </a>
+            </div>
+
+            <div class="video-player-container">
+              <iframe
+                id="uav-threat-detection-video"
+                src="https://www.youtube-nocookie.com/embed/ThPveLmHdXg"
+                title="AI-Based UAV Threat Detection System Demonstration Video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="video-showcase-footer">
+              <span class="video-status-indicator">
+                <span class="status-pulsing-dot"></span> SIMULATION RECORDING
+              </span>
+              <span class="video-caption-text">
+                MATLAB/Simulink UAV trajectory planning, waypoint navigation &amp; threat interception simulation
+              </span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span>Harshil Chauhan</span> · <span>NIT Durgapur</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="https://github.com/harshil28006" target="_blank" rel="noopener">github.com/harshil28006</a>
+        <a href="https://linkedin.com/in/harshil-nitdurgapur" target="_blank" rel="noopener">linkedin</a>
+        <a href="mailto:harshil0807@gmail.com">harshil0807@gmail.com</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

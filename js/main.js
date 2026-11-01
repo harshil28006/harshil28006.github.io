@@ -142,3 +142,74 @@
   initTheme();
 })();
 
+
+
+// --------------------------------------------------------------------------
+// Multi-Page Navigation: Dropdown + Mobile Menu + Active Page Detection
+// --------------------------------------------------------------------------
+
+// Dropdown menus (CSS hover on desktop; JS click for mobile/keyboard)
+var navDropdowns = document.querySelectorAll('.nav-dropdown');
+navDropdowns.forEach(function(dd) {
+  var toggle = dd.querySelector('.nav-dropdown-toggle');
+  if (!toggle) return;
+  toggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var isOpen = dd.classList.contains('open');
+    navDropdowns.forEach(function(other) {
+      other.classList.remove('open');
+      var t = other.querySelector('.nav-dropdown-toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      dd.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+document.addEventListener('click', function() {
+  navDropdowns.forEach(function(dd) {
+    dd.classList.remove('open');
+    var toggle = dd.querySelector('.nav-dropdown-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// Mobile menu toggle (hamburger ↔ close)
+var mobileToggleBtn = document.querySelector('.nav-mobile-toggle');
+var navbarNavEl = document.querySelector('.navbar-nav');
+if (mobileToggleBtn && navbarNavEl) {
+  mobileToggleBtn.addEventListener('click', function() {
+    var isOpen = navbarNavEl.classList.contains('mobile-open');
+    navbarNavEl.classList.toggle('mobile-open');
+    mobileToggleBtn.textContent = isOpen ? '☰' : '✕';
+    mobileToggleBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    mobileToggleBtn.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+  });
+}
+
+// Active page detection
+(function() {
+  var path = window.location.pathname;
+  var segs = path.split('/').filter(function(s) { return s.length > 0; });
+  var filename = segs.length > 0 ? segs[segs.length - 1] : 'index.html';
+  if (!filename || !filename.includes('.')) filename = 'index.html';
+
+  document.querySelectorAll('.nav-link, .dropdown-menu a').forEach(function(link) {
+    var href = (link.getAttribute('href') || '');
+    // Strip leading ../ for project pages
+    var normalized = href.replace(/^(\.\.\/)+/, '');
+    var hrefFile = normalized.split('/').pop();
+    if (!hrefFile) return;
+    if (hrefFile === filename) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+      var parentDd = link.closest('.nav-dropdown');
+      if (parentDd) {
+        var ddToggle = parentDd.querySelector('.nav-dropdown-toggle');
+        if (ddToggle) ddToggle.classList.add('active');
+      }
+    }
+  });
+})();
