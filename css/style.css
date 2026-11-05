@@ -1378,6 +1378,41 @@ code, kbd, pre, samp {
 }
 
 /* --------------------------------------------------------------------------
+   Upcoming Projects / Coming Soon Component
+   -------------------------------------------------------------------------- */
+.upcoming-project-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--accent-cyan);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.upcoming-project-item:hover {
+  border-color: var(--border-hover);
+  border-left-color: var(--accent-cyan);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.upcoming-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
    Experience Teaser (Homepage summary)
    -------------------------------------------------------------------------- */
 .exp-teaser {
@@ -1713,6 +1748,10 @@ code, kbd, pre, samp {
   /* Stacked grids */
   .recent-projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .upcoming-project-item {
+    padding: 1.15rem;
   }
 
   .contact-grid {
