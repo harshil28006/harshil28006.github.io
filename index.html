@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harshil Chauhan — Robotics &amp; Data Systems</title>
-  <meta name="description" content="Harshil Chauhan — Mechanical Engineering undergraduate at NIT Durgapur. Research in AUV simulation, UAV flight control, and cloud data engineering. Research Intern at IIT Mandi.">
+  <meta name="description"
+    content="Harshil Chauhan — Mechanical Engineering undergraduate at NIT Durgapur. Research in AUV simulation, UAV flight control, and cloud data engineering. Research Intern at IIT Mandi.">
   <meta name="author" content="Harshil Chauhan">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Harshil Chauhan — Robotics &amp; Data Systems">
-  <meta property="og:description" content="B.Tech Mechanical Engineering at NIT Durgapur. Research in AUV simulation, UAV flight control, and cloud data engineering (Snowflake, DBT).">
+  <meta property="og:description"
+    content="B.Tech Mechanical Engineering at NIT Durgapur. Research in AUV simulation, UAV flight control, and cloud data engineering (Snowflake, DBT).">
   <meta property="og:url" content="https://harshil28006.github.io/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <script>
     try {
       var saved = localStorage.getItem('theme');
       if (saved) document.documentElement.dataset.theme = saved;
-    } catch(e) {}
+    } catch (e) { }
   </script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -34,15 +40,18 @@
       <a href="index.html" class="navbar-path" aria-label="Harshil Chauhan Home">
         <span class="p-tilde">~/</span><span class="p-name">harshil</span>
       </a>
-      <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Open navigation menu"
+        aria-expanded="false">☰</button>
       <ul class="navbar-nav" id="navbar-nav" role="list">
         <li><a href="index.html" class="nav-link">home</a></li>
         <li><a href="about.html" class="nav-link">about</a></li>
         <li class="nav-dropdown">
           <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">projects ▾</button>
           <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="projects/uav-auv.html" role="menuitem"><span class="dm-tilde">~/</span><span class="dm-path">projects/uav-auv</span></a></li>
-            <li role="none"><a href="projects/data-engineering.html" role="menuitem"><span class="dm-tilde">~/</span><span class="dm-path">projects/data-engineering</span></a></li>
+            <li role="none"><a href="projects/uav-auv.html" role="menuitem"><span class="dm-tilde">~/</span><span
+                  class="dm-path">projects/uav-auv</span></a></li>
+            <li role="none"><a href="projects/data-engineering.html" role="menuitem"><span
+                  class="dm-tilde">~/</span><span class="dm-path">projects/data-engineering</span></a></li>
 
           </ul>
         </li>
@@ -51,7 +60,8 @@
         <li><a href="contact.html" class="nav-link">contact</a></li>
         <li><a href="cv.html" class="nav-link">cv</a></li>
         <li>
-          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme (T)">◐</button>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"
+            title="Toggle theme (T)">◐</button>
         </li>
       </ul>
     </div>
@@ -64,7 +74,7 @@
       <div class="cmd-line">
         <span class="cmd-dollar">$</span>
         <span class="cmd-name">whois</span>
-        <span class="cmd-arg">harshil-chauhan</span>
+        <span class="cmd-arg">harshil</span>
       </div>
 
       <div class="hero-identity">
@@ -79,7 +89,11 @@
       </div>
 
       <p class="hero-bio">
-        I am a Mechanical Engineering undergraduate at the <strong>National Institute of Technology, Durgapur</strong> (CGPA: 8.22/10). My work centers on hands-on research in robotics, <strong>autonomous underwater vehicle (AUV) simulation</strong>, control systems, and <strong>cloud data engineering</strong>. Notably, I completed a <strong>Research Internship in Marine Robotics &amp; Autonomous Systems at IIT Mandi</strong> (CAIR), developing ROS 2 and Gazebo simulation frameworks with cascaded PID control.
+        I am a Mechanical Engineering undergraduate at the <strong>National Institute of Technology, Durgapur</strong>
+        (CGPA: 8.22/10). My work centers on hands-on research in robotics, <strong>autonomous underwater vehicle (AUV)
+          simulation</strong>, control systems, and <strong>cloud data engineering</strong>. Notably, I completed a
+        <strong>Research Internship in Marine Robotics &amp; Autonomous Systems at IIT Mandi</strong> (CAIR), developing
+        ROS 2 and Gazebo simulation frameworks with cascaded PID control.
       </p>
 
       <!-- Terminal-style Core Stack -->
@@ -132,7 +146,8 @@
           <span class="project-card-label">~/projects/uav-auv</span>
           <h3 class="project-card-title">Autonomous Underwater Vehicle Navigation System</h3>
           <p class="project-card-desc">
-            ROS 2 &amp; Gazebo Harmonic AUV simulation framework for marine inspection. Cascaded PID depth control, ArduPilot integration, OpenCV path detection, and DVL/sonar sensor fusion.
+            ROS 2 &amp; Gazebo Harmonic AUV simulation framework for marine inspection. Cascaded PID depth control,
+            ArduPilot integration, OpenCV path detection, and DVL/sonar sensor fusion.
           </p>
           <div class="project-card-tags">
             <span class="tech-tag">ROS 2</span>
@@ -148,7 +163,8 @@
           <span class="project-card-label">~/projects/data-engineering</span>
           <h3 class="project-card-title">NexusData Warehouse</h3>
           <p class="project-card-desc">
-            End-to-end cloud data pipeline on Snowflake with medallion architecture (Bronze/Silver/Gold). DBT Core + Jinja macros, AWS S3 ingestion, SCD Type 2, and OBT/Star Schema analytics.
+            End-to-end cloud data pipeline on Snowflake with medallion architecture (Bronze/Silver/Gold). DBT Core +
+            Jinja macros, AWS S3 ingestion, SCD Type 2, and OBT/Star Schema analytics.
           </p>
           <div class="project-card-tags">
             <span class="tech-tag">Snowflake</span>
@@ -197,16 +213,21 @@
 
         <ul class="achievements-list" style="margin-top: 0.85rem;">
           <li>
-            Architecting a high-throughput enterprise data platform engineered with <strong>Databricks, PySpark, and Apache Airflow</strong> for automated batch ingestion, workflow scheduling, and dependency-driven DAG execution.
+            Architecting a high-throughput enterprise data platform engineered with <strong>Databricks, PySpark, and
+              Apache Airflow</strong> for automated batch ingestion, workflow scheduling, and dependency-driven DAG
+            execution.
           </li>
           <li>
-            Implementing a robust <strong>Medallion Lakehouse Architecture (Bronze → Silver → Gold)</strong>, managing incremental raw data loads, schema enforcement, data hygiene, and curated business aggregations.
+            Implementing a robust <strong>Medallion Lakehouse Architecture (Bronze → Silver → Gold)</strong>, managing
+            incremental raw data loads, schema enforcement, data hygiene, and curated business aggregations.
           </li>
           <li>
-            Leveraging <strong>dbt Core with modular SQL transformations and Jinja macros</strong> to govern dimensional modeling, automated testing, and <strong>Slowly Changing Dimensions (SCD Type 2)</strong> tracking.
+            Leveraging <strong>dbt Core with modular SQL transformations and Jinja macros</strong> to govern dimensional
+            modeling, automated testing, and <strong>Slowly Changing Dimensions (SCD Type 2)</strong> tracking.
           </li>
           <li>
-            Building for production reliability with automated alerting, data validation gates, and optimized <strong>Star Schema / analytical views</strong> ready for BI intelligence and data science workloads.
+            Building for production reliability with automated alerting, data validation gates, and optimized
+            <strong>Star Schema / analytical views</strong> ready for BI intelligence and data science workloads.
           </li>
         </ul>
       </div>
@@ -239,12 +260,15 @@
         <div class="project-header">
           <div>
             <h3 class="project-title">Harshil Chauhan — Curriculum Vitae</h3>
-            <span class="project-tagline">B.Tech Mechanical Engineering, NIT Durgapur · Research Intern at IIT Mandi</span>
+            <span class="project-tagline">B.Tech Mechanical Engineering, NIT Durgapur · Research Intern at IIT
+              Mandi</span>
           </div>
         </div>
 
         <p class="project-card-desc" style="margin-top: 0.5rem;">
-          Complete verified credentials including academic performance (CGPA 8.22/10), research at CAIR IIT Mandi (AUV simulation, ROS 2, Gazebo Harmonic), flight control projects, cloud data engineering platforms (Snowflake, dbt, Airflow, Databricks), and departmental leadership.
+          Complete verified credentials including academic performance (CGPA 8.22/10), research at CAIR IIT Mandi (AUV
+          simulation, ROS 2, Gazebo Harmonic), flight control projects, cloud data engineering platforms (Snowflake,
+          dbt, Airflow, Databricks), and departmental leadership.
         </p>
 
         <div class="cv-meta-grid">
@@ -294,4 +318,5 @@
 
   <script src="js/main.js"></script>
 </body>
+
 </html>
