@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Analytics — Harshil Chauhan</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Private terminal analytics dashboard for Harshil Chauhan's portfolio.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.dataset.theme = saved;
+    } catch(e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="navbar-path" aria-label="Harshil Chauhan Home">
+        <span class="p-tilde">~/</span><span class="p-name">harshil</span><span class="p-tilde">/analytics</span>
+      </a>
+      <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <ul class="navbar-nav" id="navbar-nav" role="list">
+        <li><a href="index.html" class="nav-link">home</a></li>
+        <li><a href="about.html" class="nav-link">about</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">projects ▾</button>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none"><a href="projects/uav-auv.html" role="menuitem"><span class="dm-tilde">~/</span><span class="dm-path">projects/uav-auv</span></a></li>
+            <li role="none"><a href="projects/data-engineering.html" role="menuitem"><span class="dm-tilde">~/</span><span class="dm-path">projects/data-engineering</span></a></li>
+          </ul>
+        </li>
+        <li><a href="experience.html" class="nav-link">experience</a></li>
+        <li><a href="skills.html" class="nav-link">skills</a></li>
+        <li><a href="contact.html" class="nav-link">contact</a></li>
+        <li><a href="cv.html" class="nav-link">cv</a></li>
+        <li>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme (T)">◐</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" id="main" style="max-width: 900px;">
+
+    <!-- ==================================================================== -->
+    <!-- 1. AUTHENTICATION GATE (Restricted Access)                          -->
+    <!-- ==================================================================== -->
+    <div id="auth-screen" class="auth-card" style="margin-top: 3.5rem;">
+      <div class="video-showcase-header">
+        <div class="video-window-controls" aria-hidden="true">
+          <span class="control-dot dot-red"></span>
+          <span class="control-dot dot-yellow"></span>
+          <span class="control-dot dot-green"></span>
+        </div>
+        <div class="video-showcase-title">
+          <span class="cmd-dollar">$</span>
+          <span>sudo auth --role="portfolio-admin"</span>
+        </div>
+      </div>
+
+      <div style="padding: 2rem 1.75rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary);">
+          Private Analytics Terminal
+        </h2>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">
+          Restricted administrator interface. Please enter your administrator passcode to decrypt and view live traffic telemetry.
+        </p>
+
+        <form id="auth-form" style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="font-family: var(--font-mono); font-size: 0.84rem; display: flex; align-items: center; gap: 0.5rem; background: var(--bg-subtle); border: 1px solid var(--border-hover); padding: 0.65rem 0.9rem; border-radius: var(--radius-sm);">
+            <span style="color: var(--accent-cyan); font-weight: 600;">passphrase:</span>
+            <input
+              type="password"
+              id="auth-password"
+              placeholder="Enter passcode..."
+              required
+              autocomplete="current-password"
+              style="background: transparent; border: none; color: var(--text-primary); font-family: var(--font-mono); font-size: 0.85rem; width: 100%; outline: none;"
+            />
+          </div>
+
+          <div id="auth-error" style="display: none; font-family: var(--font-mono); font-size: 0.78rem; color: #ef4444;"></div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem;">
+            <button type="submit" class="btn primary" style="padding: 0.5rem 1.25rem;">
+              Unlock Dashboard →
+            </button>
+            <span class="text-muted" style="font-family: var(--font-mono); font-size: 0.72rem;">
+              Default passcode: <code style="color: var(--text-code);">harshil2026</code>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- 2. MAIN ANALYTICS DASHBOARD (Visible After Auth)                    -->
+    <!-- ==================================================================== -->
+    <div id="dashboard-content" style="display: none; padding-top: 2rem; padding-bottom: 3.5rem;">
+
+      <!-- Dashboard Terminal Header Bar -->
+      <div class="dash-top-bar">
+        <div>
+          <div class="cmd-line" style="margin-bottom: 0.35rem;">
+            <span class="cmd-dollar">$</span>
+            <span class="cmd-name">portfolio_analytics</span>
+            <span class="cmd-arg">--view=live --telemetry=stream</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+            <span class="upcoming-badge" style="margin-bottom: 0;">
+              <span class="status-pulsing-dot pulse-cyan"></span>
+              <span>LIVE TELEMETRY STREAM</span>
+            </span>
+            <span class="text-muted" style="font-family: var(--font-mono); font-size: 0.74rem;">
+              Synced at <span id="dash-last-updated">--:--:--</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Action Tools -->
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <div class="dash-range-group" role="group" aria-label="Time range selector">
+            <button type="button" class="dash-chip" data-range="7">7D</button>
+            <button type="button" class="dash-chip active" data-range="30">30D</button>
+            <button type="button" class="dash-chip" data-range="all">All</button>
+          </div>
+          <button type="button" class="btn" id="btn-refresh-dash" title="Refresh metrics" style="padding: 0.35rem 0.65rem;">
+            ↻ Refresh
+          </button>
+          <button type="button" class="btn" id="btn-logout" title="Lock dashboard" style="padding: 0.35rem 0.65rem;">
+            🔒 Lock
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI Stat Cards Grid -->
+      <div class="dash-kpi-grid">
+        <div class="dash-kpi-card">
+          <div class="dash-kpi-label">Unique Visitors</div>
+          <div class="dash-kpi-value" id="metric-visitors">0</div>
+          <div class="dash-kpi-sub"><span style="color: var(--accent-green);">↑ +18.4%</span> vs last period</div>
+        </div>
+
+        <div class="dash-kpi-card">
+          <div class="dash-kpi-label">Total Pageviews</div>
+          <div class="dash-kpi-value" id="metric-pageviews">0</div>
+          <div class="dash-kpi-sub">Across portfolio pages</div>
+        </div>
+
+        <div class="dash-kpi-card">
+          <div class="dash-kpi-label">Active Sessions Now</div>
+          <div class="dash-kpi-value" style="color: var(--accent-cyan); display: flex; align-items: center; gap: 0.5rem;">
+            <span class="status-pulsing-dot pulse-cyan" style="display: inline-block;"></span>
+            <span id="metric-active">1</span>
+          </div>
+          <div class="dash-kpi-sub">Real-time pulse</div>
+        </div>
+
+        <div class="dash-kpi-card">
+          <div class="dash-kpi-label">Avg Session Duration</div>
+          <div class="dash-kpi-value" id="metric-duration">0m 00s</div>
+          <div class="dash-kpi-sub">Active engagement time</div>
+        </div>
+
+        <div class="dash-kpi-card">
+          <div class="dash-kpi-label">Engagement Rate</div>
+          <div class="dash-kpi-value" style="color: var(--accent-green);" id="metric-engagement">0%</div>
+          <div class="dash-kpi-sub">Interaction benchmark</div>
+        </div>
+
+        <div class="dash-kpi-card">
+          <div class="dash-kpi-label">Resume Downloads</div>
+          <div class="dash-kpi-value" style="color: var(--accent-amber);" id="metric-cv-downloads">0</div>
+          <div class="dash-kpi-sub">Harshil_Chauhan_CV.pdf</div>
+        </div>
+
+        <div class="dash-kpi-card">
+          <div class="dash-kpi-label">GitHub Clicks</div>
+          <div class="dash-kpi-value" style="color: var(--text-code);" id="metric-github-clicks">0</div>
+          <div class="dash-kpi-sub">Repo &amp; Code navigations</div>
+        </div>
+      </div>
+
+      <!-- Traffic Trend Chart Section -->
+      <div class="dash-chart-card">
+        <div class="dash-card-header">
+          <div class="dash-card-title">
+            <span class="cmd-dollar">$</span>
+            <span>view_traffic_trend --granularity=daily</span>
+          </div>
+          <span class="dash-card-badge">Daily Visitor Activity</span>
+        </div>
+        <div id="traffic-chart" style="padding: 1rem 0.5rem 0.5rem; width: 100%;">
+          <!-- Rendered via SVG in dashboard.js -->
+        </div>
+      </div>
+
+      <!-- Two-Column Breakdown: Sources & Geography -->
+      <div class="two-col-grid" style="margin-top: 1.5rem;">
+        <!-- Traffic Acquisition Sources -->
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div class="dash-card-title">
+              <span class="cmd-dollar">$</span>
+              <span>cat /var/log/traffic_sources.txt</span>
+            </div>
+          </div>
+          <div id="sources-list" style="padding: 1rem;">
+            <!-- Rendered in dashboard.js -->
+          </div>
+        </div>
+
+        <!-- Visitor Geography -->
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div class="dash-card-title">
+              <span class="cmd-dollar">$</span>
+              <span>geoiplookup --distribution</span>
+            </div>
+          </div>
+          <div id="countries-list" style="padding: 1rem;">
+            <!-- Rendered in dashboard.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Most Popular Pages & Projects Table -->
+      <div class="dash-card" style="margin-top: 1.5rem;">
+        <div class="dash-card-header">
+          <div class="dash-card-title">
+            <span class="cmd-dollar">$</span>
+            <span>sort -rn --key=pageviews /var/log/pages.log</span>
+          </div>
+          <span class="dash-card-badge">Top Projects &amp; Pages</span>
+        </div>
+        <div style="overflow-x: auto; padding: 0.5rem 1rem 1rem;">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">Rank</th>
+                <th>Page / Project Name</th>
+                <th class="text-right">Views</th>
+              </tr>
+            </thead>
+            <tbody id="pages-table-body">
+              <!-- Rendered via dashboard.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Devices & Platform Distribution -->
+      <div class="dash-card" style="margin-top: 1.5rem;">
+        <div class="dash-card-header">
+          <div class="dash-card-title">
+            <span class="cmd-dollar">$</span>
+            <span>uname -a --client-devices</span>
+          </div>
+          <span class="dash-card-badge">Hardware &amp; Platforms</span>
+        </div>
+        <div id="devices-breakdown" class="device-chips-row" style="padding: 1.25rem;">
+          <!-- Rendered in dashboard.js -->
+        </div>
+      </div>
+
+      <!-- Real-Time Event Log Stream -->
+      <div class="dash-card" style="margin-top: 1.5rem;">
+        <div class="dash-card-header">
+          <div class="dash-card-title">
+            <span class="cmd-dollar">$</span>
+            <span>tail -f /var/log/portfolio_interactions.log</span>
+          </div>
+          <div class="dash-filter-chips">
+            <button type="button" class="chip-btn active" data-filter="all">All</button>
+            <button type="button" class="chip-btn" data-filter="resume">Resume</button>
+            <button type="button" class="chip-btn" data-filter="github">GitHub</button>
+            <button type="button" class="chip-btn" data-filter="project">Projects</button>
+          </div>
+        </div>
+
+        <div class="dash-log-feed" id="event-log-container">
+          <!-- Rendered dynamically in dashboard.js -->
+        </div>
+      </div>
+
+      <!-- Google Analytics 4 Cloud Sync & Export Section -->
+      <div class="dash-card" style="margin-top: 1.5rem;">
+        <div class="dash-card-header">
+          <div class="dash-card-title">
+            <span class="cmd-dollar">$</span>
+            <span>config --service="google_analytics_4"</span>
+          </div>
+          <span class="dash-card-badge">Cloud Sync Settings</span>
+        </div>
+        <div style="padding: 1.25rem;">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+            Connect your free <strong>Google Analytics 4 (GA4)</strong> stream. Once saved, all visitor pageviews, CV downloads, and project clicks are streamed directly to your Google Analytics account in parallel without affecting site speed.
+          </p>
+
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+            <input
+              type="text"
+              id="ga-input-id"
+              placeholder="e.g. G-ABC1234567"
+              style="flex: 1; min-width: 220px; background: var(--bg-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 0.45rem 0.75rem; color: var(--text-primary); font-family: var(--font-mono); font-size: 0.82rem;"
+            />
+            <button type="button" id="btn-save-ga" class="btn primary">Save GA4 Stream</button>
+            <button type="button" id="btn-export-data" class="btn">Export JSON ↓</button>
+            <button type="button" id="btn-reset-data" class="btn" style="color: #ef4444;">Purge Telemetry</button>
+          </div>
+          <div id="ga-status-msg" style="font-family: var(--font-mono); font-size: 0.76rem;"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span>Harshil Chauhan</span> · <span>NIT Durgapur</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="https://github.com/harshil28006" target="_blank" rel="noopener">github.com/harshil28006</a>
+        <a href="https://linkedin.com/in/harshil-nitdurgapur" target="_blank" rel="noopener">linkedin</a>
+        <a href="mailto:harshil0807@gmail.com">harshil0807@gmail.com</a>
+        <a href="analytics.html" style="color: var(--accent-cyan); font-weight: 500;">~/analytics</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/analytics.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
+
